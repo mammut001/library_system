@@ -1,0 +1,3 @@
+/Users/doge-to-the-moon/CLionProjects/library-system/cmake-build-debug/CMakeFiles/library_system.dir
+/Users/doge-to-the-moon/CLionProjects/library-system/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/doge-to-the-moon/CLionProjects/library-system/cmake-build-debug/CMakeFiles/rebuild_cache.dir
