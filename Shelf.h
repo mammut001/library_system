@@ -7,7 +7,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include "book.h"
+#include "Book.h"
 
 using std::string;
 using std::vector;
@@ -19,18 +19,26 @@ private:
     vector<Book> books;
 
 public:
-    Shelf(string  id): shelfId(move(id)){}
-    string getShelfId() const {
-        return shelfId;
-    }
+    Shelf(string id);
+    string getShelfId() const;
 
-    void setShelfId(const string& id) {
-        shelfId = id;
-    }
+    void setShelfId(const string& id);
+
     vector<Book> getBooks() const {
         return books;
     }
+    void addBook(const Book& book);
+    void removeBook(const Book& book);
 
+    void printAllBooks() const {
+        std::cout << "Total number of books on the shelf: " << getShelfSize() << std::endl;
+        for (const auto& book: books) {
+            Book::print(book);
+            cout << "---------------------" << endl;
+
+        }
+    }
+    int getShelfSize() const;
 
 
 };

@@ -18,6 +18,7 @@ using std::endl;
 
 class Book {
 public:
+    int index;
     string name;
     string location;
     int copies;

@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
-#include "book.h"
+#include "Book.h"
 #include <map>
+
+#include "Shelf.h"
 
 using std::vector;
 using std::map;
@@ -15,7 +17,7 @@ int main() {
     myBook.location = "Library Section A";
     myBook.copies = 3;
     myBook.isbn = "978-0-316-76948-0";
-
+    myBook.index = -1;
 
     Genre myGenreBook;
     myGenreBook.name = "The Catcher in the Rye";
@@ -23,12 +25,17 @@ int main() {
     myGenreBook.copies = 3;
     myGenreBook.isbn = "978-0-316-76948-0";
     myGenreBook.genreName = "Fiction";
-
-    Genre::printGenre(myGenreBook);
+    myGenreBook.index = -1;
 
     myGenreBook.setLocation("Library Section B");
     myGenreBook.updateCopy(true,2);
 
-    Genre::printGenre(myGenreBook);
+    Shelf myShelf("shelf1");
+    myShelf.addBook(myGenreBook);
+    myShelf.addBook(myBook);
+    myShelf.printAllBooks();
+
+    myShelf.removeBook(myBook);
+    myShelf.printAllBooks();
 
 }
