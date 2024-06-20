@@ -22,20 +22,73 @@ string Shelf::getShelfId() const {
 int Shelf::getShelfSize() const{
     return books.size();
 }
+bool Shelf::updateNumberOfCopies(bool action,const Book &book) {
+    const string isbn = book.isbn;
+    bool flag = false;
+
+
+    if(shelf.find(isbn) != shelf.end()) {
+        //if we have this book
+        if (action) {
+            shelf[isbn] += 1;
+            flag = true;
+        }
+
+        else {
+            shelf[isbn] -= 1;
+            flag = false;
+        }
+
+    }
+    else {
+        //if we did not find the book.
+        if(action) {
+            shelf[isbn] = 1;
+        }
+        else {
+            cout << "No such books" << endl;
+            return false;
+        }
+
+    }
+    return flag;
+}
+
 
 void Shelf::addBook(const Book &book) {
     Book newBook = book;
+    const string isbn = newBook.isbn;
     newBook.index = getShelfSize();
+
+    cout << "add book -  index " <<newBook.index << "Name is " << book.name << endl;
+
     books.push_back(newBook);
+
+    //update copies
+    updateNumberOfCopies(true, newBook);
+
+
 }
 
 void Shelf::removeBook(const Book &book) {
     //retrieve index first
     const int index = book.index;
-    cout << "Book index "<< index << endl;
-    books.erase(books.begin()+index);
-    for (int i = index; i < books.size(); ++i) {
-        books[i].index = i;
+    const string isbn = book.isbn;
+    cout << "Remove book index " <<index << "Name is " << book.name << endl;
+
+    if (index >= 0) {
+        cout << "Book index "<< index << endl;
+        books.erase(books.begin()+index);
+        //updating the index after the removed items.
+        for (int i = index; i < books.size(); ++i) {
+            books[i].index = i;
+        }
+        //subtract
+        updateNumberOfCopies(false,book);
+
+    }
+    else {
+        cout << "Invalid index: " << index << endl;
     }
 
 }

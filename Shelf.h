@@ -12,11 +12,14 @@
 using std::string;
 using std::vector;
 using std::move;
+using std::map;
 
 class Shelf {
 private:
     string shelfId;
     vector<Book> books;
+
+    map<string,int> shelf;
 
 public:
     Shelf(string id);
@@ -27,6 +30,7 @@ public:
     vector<Book> getBooks() const {
         return books;
     }
+    bool updateNumberOfCopies(bool action,const Book &book);
     void addBook(const Book& book);
     void removeBook(const Book& book);
 

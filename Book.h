@@ -21,13 +21,12 @@ public:
     int index;
     string name;
     string location;
-    int copies;
     string isbn;
+
 
     static void print(const Book& book) {
         cout << "Name: " << book.name << endl;
         cout << "Location: " << book.location << endl;
-        cout << "Copies: " << book.copies << endl;
         cout << "ISBN: " << book.isbn << endl;
     }
     void setLocation(const string& newLocation);
