@@ -29,16 +29,11 @@ int main() {
 
 
     Shelf myShelf("shelf1");
+    myShelf.addBook(myGenreBook);
+    myShelf.addBook(myBook);
+    // myShelf.printAllBooks();
 
-    // 保存添加到 Shelf 的 Book 对象
-    Book addedGenreBook = myGenreBook;
-    Book addedBook = myBook;
-
-    myShelf.addBook(addedGenreBook);
-    myShelf.addBook(addedBook);
-    myShelf.printAllBooks();
-
-    myShelf.removeBook(addedBook);
+    myShelf.removeBook(myBook);
     myShelf.printAllBooks();
 
     return 0;
