@@ -16,14 +16,12 @@ int main() {
     myBook.name = "The Catcher in the Rye";
     myBook.location = "Library Section A";
     myBook.isbn = "978-0-316-76948-0";
-    myBook.index = -1;
 
     Genre myGenreBook;
-    myGenreBook.name = "The Catcher in the Rye";
-    myGenreBook.location = "Library Section A";
-    myGenreBook.isbn = "978-0-316-76948-0";
+    myGenreBook.name = "Fish";
+    myGenreBook.location = "Library Section B";
+    myGenreBook.isbn = "978-0-316-76948-321910";
     myGenreBook.genreName = "Fiction";
-    myGenreBook.index = -1;
 
     myGenreBook.setLocation("Library Section B");
 

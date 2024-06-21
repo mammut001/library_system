@@ -60,7 +60,7 @@ void Shelf::addBook(const Book &book) {
     const string isbn = newBook.isbn;
     newBook.index = getShelfSize();
 
-    cout << "add book -  index " <<newBook.index << "Name is " << book.name << endl;
+    cout << "add book -  index " <<newBook.index << " Name is " << book.name << endl;
 
     books.push_back(newBook);
 
@@ -74,7 +74,7 @@ void Shelf::removeBook(const Book &book) {
     //retrieve index first
     const int index = book.index;
     const string isbn = book.isbn;
-    cout << "Remove book index " <<index << "Name is " << book.name << endl;
+    cout << "Remove book index is " <<index << " Book Name is " << book.name <<" "<< endl;
 
     if (index >= 0) {
         cout << "Book index "<< index << endl;
