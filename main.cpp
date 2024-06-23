@@ -55,16 +55,24 @@ int main() {
     nonfiction.addBook(nonfictionBook3);
 
 
-    nonfiction.printAllBooks();
-
-
-    fiction.printAllBooks();
+//    nonfiction.printAllBooks();
+//
+//
+//    fiction.printAllBooks();
 
     Student student1("1", "John Doe");
     Student student2("2", "Jane Smith");
-    student1.addBorrowedBook("978-0-316-76948-0");
-    student1.addBorrowedBook("978-0-316-76948-0");
-    student1.addBorrowedBook("978-0-316-76948-0");
+    cout << 1198 << endl;
+
+    fiction.addBorrowedBook("978-0-316-76948-0");
+    fiction.addBorrowedBook("978-0-316-76948-0");
+    fiction.addBorrowedBook("978-0-316-76948-0");
+    fiction.addBorrowedBook("978-0-316-76948-0");
+    printf("2e312");
+//    fiction.printBorrowedBooks();
+    student1.printBorrowedBooks(fiction.getBorrowedBooks());
+
+
 
 
 // ------------------------------

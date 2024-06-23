@@ -9,7 +9,6 @@ using std::string;
 using std::vector;
 using std::move;
 
-Shelf::Shelf(string id) : shelfId(std::move(id)) {}
 
 void Shelf::setShelfId(const string &id) {
     shelfId = id;
@@ -22,6 +21,12 @@ string Shelf::getShelfId() const {
 int Shelf::getShelfSize() const{
     return books.size();
 }
+void Shelf::addBorrowedBook(const string& isbn) {
+    (*borrowedBooks)[isbn] = 100;
+    printBorrowedBooks();
+    cout<< "SUCCESs" << endl;
+}
+
 bool Shelf::updateNumberOfCopies(bool action,const Book &book) {
     const string isbn = book.isbn;
     bool flag = false;

@@ -14,33 +14,32 @@
 #include <memory>
 #include <iostream>
 
+using std::make_shared;
+using std::shared_ptr;
 
 using std::string;
 using std::vector;
 using std::move;
 using std::map;
-using std::make_shared;
-using std::shared_ptr;
 
 class Library;
 class Student {
 private:
     string id; // only key
     string name;
-    std::shared_ptr<map<string,int>> borrowedBooks;
 public:
-    Student(string id, string name):id(std::move(id)), name(std::move(name)), borrowedBooks(make_shared<map<string,int>>()){}
+//    Shelf(string id):shelfId(std::move(id)), borrowedBooks(std::move(make_shared<map<string,int>>())){};
+
+    Student(string id, string name):id(std::move(id)), name(std::move(name)){};
     string getId (){
         return id;
     }
     string getName(){
         return name;
     }
-    shared_ptr<map<string,int>> getBorrowedBooks(){
-        return borrowedBooks;
-    };
-    void addBorrowedBook(const string& isbn);
-    void printBorrowedBooks(){
+
+    void printBorrowedBooks(const shared_ptr<map<string,int>> &borrowedBooks) const{
+
         for (auto const & pair: *borrowedBooks){
             cout<< "ISBN:" << pair.first << "TTL: "<< pair.second <<endl;
         }
