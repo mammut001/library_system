@@ -35,6 +35,7 @@ public:
     void removeBook(const Book& book);
 
     void printAllBooks() const {
+        cout<< shelfId <<endl;
         std::cout << "Total number of books on the shelf: " << getShelfSize() << std::endl;
         for (const auto& book: books) {
             Book::print(book);

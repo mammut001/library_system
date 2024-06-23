@@ -10,4 +10,8 @@ add_executable(library_system main.cpp
         Shelf.h
         University.cpp
         University.h
+        Library.cpp
+        Library.h
+        Student/Student.cpp
+        Student/Student.h
 )

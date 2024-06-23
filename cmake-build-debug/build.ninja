@@ -73,6 +73,18 @@ build CMakeFiles/library_system.dir/University.cpp.o: CXX_COMPILER__library_syst
   OBJECT_DIR = CMakeFiles/library_system.dir
   OBJECT_FILE_DIR = CMakeFiles/library_system.dir
 
+build CMakeFiles/library_system.dir/Library.cpp.o: CXX_COMPILER__library_system_unscanned_Debug /Users/doge-to-the-moon/CLionProjects/library-system/Library.cpp || cmake_object_order_depends_target_library_system
+  DEP_FILE = CMakeFiles/library_system.dir/Library.cpp.o.d
+  FLAGS = -g -std=gnu++11 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/library_system.dir
+  OBJECT_FILE_DIR = CMakeFiles/library_system.dir
+
+build CMakeFiles/library_system.dir/Student/Student.cpp.o: CXX_COMPILER__library_system_unscanned_Debug /Users/doge-to-the-moon/CLionProjects/library-system/Student/Student.cpp || cmake_object_order_depends_target_library_system
+  DEP_FILE = CMakeFiles/library_system.dir/Student/Student.cpp.o.d
+  FLAGS = -g -std=gnu++11 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/library_system.dir
+  OBJECT_FILE_DIR = CMakeFiles/library_system.dir/Student
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target library_system
@@ -81,7 +93,7 @@ build CMakeFiles/library_system.dir/University.cpp.o: CXX_COMPILER__library_syst
 #############################################
 # Link the executable library_system
 
-build library_system: CXX_EXECUTABLE_LINKER__library_system_Debug CMakeFiles/library_system.dir/main.cpp.o CMakeFiles/library_system.dir/Book.cpp.o CMakeFiles/library_system.dir/Shelf.cpp.o CMakeFiles/library_system.dir/University.cpp.o
+build library_system: CXX_EXECUTABLE_LINKER__library_system_Debug CMakeFiles/library_system.dir/main.cpp.o CMakeFiles/library_system.dir/Book.cpp.o CMakeFiles/library_system.dir/Shelf.cpp.o CMakeFiles/library_system.dir/University.cpp.o CMakeFiles/library_system.dir/Library.cpp.o CMakeFiles/library_system.dir/Student/Student.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
   OBJECT_DIR = CMakeFiles/library_system.dir
   POST_BUILD = :
