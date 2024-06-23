@@ -1,19 +1,5 @@
 # ninja log v6
 13	854	1718852295772778753	CMakeFiles/library_system.dir/Book.cpp.o	b2fb62d009afa36
-19	1414	1718853404613031344	CMakeFiles/library_system.dir/main.cpp.o	a42c16b2aee25e43
-1492	1581	1718853406086134906	library_system	7c72a3332c5f28c7
-20	1491	1718853404614138384	CMakeFiles/library_system.dir/Shelf.cpp.o	5cdee79d146afaa1
-18	1562	1718988800151397761	CMakeFiles/library_system.dir/main.cpp.o	a42c16b2aee25e43
-1562	4359	1718988801695731092	library_system	7c72a3332c5f28c7
-18	1502	1718988957556034141	CMakeFiles/library_system.dir/main.cpp.o	a42c16b2aee25e43
-1502	1584	1718988959039263732	library_system	7c72a3332c5f28c7
-20	1654	1718989040738993848	CMakeFiles/library_system.dir/Shelf.cpp.o	5cdee79d146afaa1
-1654	1732	1718989042373490490	library_system	7c72a3332c5f28c7
-11	881	1718989052430265398	CMakeFiles/library_system.dir/Shelf.cpp.o	5cdee79d146afaa1
-881	955	1718989053300464349	library_system	7c72a3332c5f28c7
-11	1050	1718989066000633572	CMakeFiles/library_system.dir/Shelf.cpp.o	5cdee79d146afaa1
-1050	1136	1718989067039888078	library_system	7c72a3332c5f28c7
 17	1469	1718989116413300047	CMakeFiles/library_system.dir/main.cpp.o	a42c16b2aee25e43
-1469	1551	1718989117865804577	library_system	7c72a3332c5f28c7
-13	1170	1718989145515516733	CMakeFiles/library_system.dir/Shelf.cpp.o	5cdee79d146afaa1
 1170	1260	1718989146673042544	library_system	7c72a3332c5f28c7
+13	1170	1718989145515516733	CMakeFiles/library_system.dir/Shelf.cpp.o	5cdee79d146afaa1

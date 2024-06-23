@@ -8,4 +8,6 @@ add_executable(library_system main.cpp
         Book.h
         Shelf.cpp
         Shelf.h
+        University.cpp
+        University.h
 )
