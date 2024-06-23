@@ -4,10 +4,10 @@
 
 #ifndef SHELF_H
 #define SHELF_H
+#include "Book.h"
 #include <string>
 #include <utility>
 #include <vector>
-#include "Book.h"
 
 using std::string;
 using std::vector;
