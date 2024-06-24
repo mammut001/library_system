@@ -38,7 +38,7 @@ public:
         return name;
     }
 
-    void printBorrowedBooks(const shared_ptr<map<string,int>> &borrowedBooks) const{
+    static void printBorrowedBooks(const shared_ptr<map<string,int>> &borrowedBooks) {
 
         for (auto const & pair: *borrowedBooks){
             cout<< "ISBN:" << pair.first << "TTL: "<< pair.second <<endl;

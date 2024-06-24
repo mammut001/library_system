@@ -21,11 +21,7 @@ string Shelf::getShelfId() const {
 int Shelf::getShelfSize() const{
     return books.size();
 }
-void Shelf::addBorrowedBook(const string& isbn) {
-    (*borrowedBooks)[isbn] = 100;
-    printBorrowedBooks();
-    cout<< "SUCCESs" << endl;
-}
+
 
 bool Shelf::updateNumberOfCopies(bool action,const Book &book) {
     const string isbn = book.isbn;

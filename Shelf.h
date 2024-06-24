@@ -26,10 +26,9 @@ private:
     map<string,int> shelf;
 
 
-    std::shared_ptr<map<string,int>> borrowedBooks;
 
 public:
-    Shelf(string id):shelfId(std::move(id)), borrowedBooks(std::move(make_shared<map<string,int>>())){};
+    Shelf(string id):shelfId(std::move(id)){};
     string getShelfId() const;
 
     void setShelfId(const string& id);
@@ -40,7 +39,6 @@ public:
     bool updateNumberOfCopies(bool action,const Book &book);
     void addBook(const Book& book);
     void removeBook(const Book& book);
-    void addBorrowedBook(const string& isbn);
 
     void printAllBooks() const {
         cout<< shelfId <<endl;
@@ -52,16 +50,9 @@ public:
         }
     }
     int getShelfSize() const;
-    shared_ptr<map<string,int>> getBorrowedBooks(){
-        return borrowedBooks;
-    };
 
-    void printBorrowedBooks(){
-        cout << "Borrowed Books" <<endl;
-        for (auto const & pair: *borrowedBooks){
-            cout<< "ISBN:" << pair.first << "TTL: "<< pair.second <<endl;
-        }
-    }
+
+
 
 
 

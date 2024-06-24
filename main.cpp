@@ -6,6 +6,7 @@
 #include "Shelf.h"
 #include "University.h"
 #include "Student/Student.h"
+#include "Library.h"
 
 using std::vector;
 using std::map;
@@ -64,13 +65,17 @@ int main() {
     Student student2("2", "Jane Smith");
     cout << 1198 << endl;
 
-    fiction.addBorrowedBook("978-0-316-76948-0");
-    fiction.addBorrowedBook("978-0-316-76948-0");
-    fiction.addBorrowedBook("978-0-316-76948-0");
-    fiction.addBorrowedBook("978-0-316-76948-0");
+    Library macodrum;
+    macodrum.addBorrowedBook("978-0-316-76948-0");
+    macodrum.addBorrowedBook("978-0-316-76948-0");
+    macodrum.addBorrowedBook("978-0-316-76948-0");
+    macodrum.addBorrowedBook("978-0-316-76948-0");
+    macodrum.addBorrowedBook("978-0-316-76948-0");
+
+
     printf("2e312");
 //    fiction.printBorrowedBooks();
-    student1.printBorrowedBooks(fiction.getBorrowedBooks());
+    student1.printBorrowedBooks(macodrum.getBorrowedBooks());
 
 
 
