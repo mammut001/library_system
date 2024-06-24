@@ -21,14 +21,15 @@ using std::string;
 using std::vector;
 using std::move;
 using std::map;
+using namespace std::chrono;
 
 class Library;
 class Student {
 private:
     string id; // only key
     string name;
+
 public:
-//    Shelf(string id):shelfId(std::move(id)), borrowedBooks(std::move(make_shared<map<string,int>>())){};
 
     Student(string id, string name):id(std::move(id)), name(std::move(name)){};
     string getId (){
@@ -44,6 +45,31 @@ public:
             cout<< "ISBN:" << pair.first << "TTL: "<< pair.second <<endl;
         }
     }
+    static void printBorrowedVector(const vector<map<string,system_clock::time_point >> & vectors){
+        for (const auto& i : vectors){
+            for(const auto& j: i){
+
+                //iter k and v in the map
+                std::time_t borrow_time = std::chrono::system_clock::to_time_t(j.second);
+
+                cout << "ISBN is: " << "and borrowed time at" << borrow_time <<"  "<<endl;
+            }
+        }
+    }
+
+    void printBorrowedBooks(std::shared_ptr<map<string,vector<map<string,system_clock::time_point>>>> borrowedBooks ){
+        cout << "Borrowed Books" << endl;
+        for (auto const & student: *borrowedBooks){
+            if (!id.compare(student.first)){
+                //only print if they are equal.
+                std::cout << "Student ID: " << student.first << std::endl;
+                printBorrowedVector(student.second);
+            }
+
+        }
+
+    }
+
 
 };
 

@@ -61,21 +61,30 @@ int main() {
 //
 //    fiction.printAllBooks();
 
-    Student student1("1", "John Doe");
-    Student student2("2", "Jane Smith");
+    Student student1("10010001", "John Doe");
+    Student student2("90000102", "Jane Smith");
     cout << 1198 << endl;
 
     Library macodrum;
-    macodrum.addBorrowedBook("978-0-316-76948-0");
-    macodrum.addBorrowedBook("978-0-316-76948-0");
-    macodrum.addBorrowedBook("978-0-316-76948-0");
-    macodrum.addBorrowedBook("978-0-316-76948-0");
-    macodrum.addBorrowedBook("978-0-316-76948-0");
+    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
+
+    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
 
 
-    printf("2e312");
-//    fiction.printBorrowedBooks();
+//    macodrum.printBorrowedBooks();
+
+
     student1.printBorrowedBooks(macodrum.getBorrowedBooks());
+
+//    fiction.printBorrowedBooks();
 
 
 
