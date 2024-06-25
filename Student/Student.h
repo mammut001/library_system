@@ -58,10 +58,10 @@ public:
     }
 
     void printBorrowedBooks(std::shared_ptr<map<string,vector<map<string,system_clock::time_point>>>> borrowedBooks ){
-        cout << "Borrowed Books" << endl;
         for (auto const & student: *borrowedBooks){
             if (!id.compare(student.first)){
                 //only print if they are equal.
+                cout << "Student Borrowed Books" << endl;
                 std::cout << "Student ID: " << student.first << std::endl;
                 printBorrowedVector(student.second);
             }

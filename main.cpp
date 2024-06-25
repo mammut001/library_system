@@ -79,10 +79,11 @@ int main() {
     macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
 
 
-//    macodrum.printBorrowedBooks();
+    macodrum.printBorrowedBooks();
 
 
-    student1.printBorrowedBooks(macodrum.getBorrowedBooks());
+//    student1.printBorrowedBooks(macodrum.getBorrowedBooks());
+//    student2.printBorrowedBooks(macodrum.getBorrowedBooks());
 
 //    fiction.printBorrowedBooks();
 
