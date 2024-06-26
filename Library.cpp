@@ -19,7 +19,7 @@ void Library::returnBook(const std::string &isbn, const std::string &studentId) 
         if(book_it != borrowedBooksVector.end()){
             // if we find it;
             borrowedBooksVector.erase(book_it);
-            cout << "Returned Successfully";
+            cout << "Returned Successfully" <<endl;
         }
         else{
             cout << "ISBN "<< isbn <<" is not associated with student"<<studentId <<endl;

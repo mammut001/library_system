@@ -35,7 +35,7 @@ std::shared_ptr<map<string,map<string,system_clock::time_point>>> borrowedBooks;
 
 public:
     // key is student id (string) val: table (k is isbn(string) v is timestamp)
-    Library(): borrowedBooks(move(make_shared<map<string,map<string,system_clock::time_point>>>())){}
+    Library(): borrowedBooks(std::move(make_shared<map<string,map<string,system_clock::time_point>>>())){}
 
     void addBorrowedBook(const string& isbn, const string& studentId);
     void returnBook(const string& isbn, const string& studentId);
@@ -46,7 +46,7 @@ public:
 
     static void printBorrowedVector(const map<string,system_clock::time_point > & dic){
         printf("Library Output: \n");
-        for (auto eachBorrowedBook: dic){
+        for (const auto& eachBorrowedBook: dic){
                 std::time_t borrow_time = std::chrono::system_clock::to_time_t(eachBorrowedBook.second);
                 char buffer[26];
                 ctime_r(&borrow_time, buffer);

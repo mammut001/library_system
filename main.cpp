@@ -86,7 +86,7 @@ int main() {
     macodrum.returnBook("978-0-316-76948-1",student1.getId());
 
 
-    macodrum.printBorrowedBooks();
+    student1.printBorrowedBooks(macodrum.getBorrowedBooks());
 
 //    student1.printBorrowedBooks(macodrum.getBorrowedBooks());
 //    student2.printBorrowedBooks(macodrum.getBorrowedBooks());

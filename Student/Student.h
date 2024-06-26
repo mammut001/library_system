@@ -45,19 +45,17 @@ public:
             cout<< "ISBN:" << pair.first << "TTL: "<< pair.second <<endl;
         }
     }
-    static void printBorrowedVector(const vector<map<string,system_clock::time_point >> & vectors){
+    static void printBorrowedVector(const map<string,system_clock::time_point > & vectors){
         for (const auto& i : vectors){
-            for(const auto& j: i){
+            //iter k and v in the map
+            std::time_t borrow_time = std::chrono::system_clock::to_time_t(i.second);
 
-                //iter k and v in the map
-                std::time_t borrow_time = std::chrono::system_clock::to_time_t(j.second);
+            cout << "ISBN is: " << "and borrowed time at " << borrow_time <<"  "<<endl;
 
-                cout << "ISBN is: " << "and borrowed time at" << borrow_time <<"  "<<endl;
-            }
         }
     }
 
-    void printBorrowedBooks(std::shared_ptr<map<string,vector<map<string,system_clock::time_point>>>> borrowedBooks ){
+    void printBorrowedBooks(shared_ptr<map<string,map<string,system_clock::time_point>>> borrowedBooks ){
         for (auto const & student: *borrowedBooks){
             if (!id.compare(student.first)){
                 //only print if they are equal.
