@@ -31,7 +31,6 @@ using namespace std::chrono;
 class Library {
 private:
 vector<Shelf> collections;
-//std::shared_ptr<map<string,vector<map<string,system_clock::time_point>>>> borrowedBooks;
 std::shared_ptr<map<string,map<string,system_clock::time_point>>> borrowedBooks;
 
 public:
@@ -39,7 +38,7 @@ public:
     Library(): borrowedBooks(move(make_shared<map<string,map<string,system_clock::time_point>>>())){}
 
     void addBorrowedBook(const string& isbn, const string& studentId);
-//    void returnBook(const string& isbn, const string& studentId);
+    void returnBook(const string& isbn, const string& studentId);
     shared_ptr<map<string,map<string,system_clock::time_point>>> getBorrowedBooks(){
         return borrowedBooks;
     };

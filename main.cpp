@@ -7,7 +7,10 @@
 #include "University.h"
 #include "Student/Student.h"
 #include "Library.h"
+#include <chrono>
+#include <thread>
 
+using namespace std::chrono;
 using std::vector;
 using std::map;
 using std::string;
@@ -66,21 +69,24 @@ int main() {
     cout << 1198 << endl;
 
     Library macodrum;
-    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
-    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
-    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
-    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
-    macodrum.addBorrowedBook("978-0-316-76948-0",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-1",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-2",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-3",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-4",student1.getId());
+    macodrum.addBorrowedBook("978-0-316-76948-5",student1.getId());
 
-    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
-    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
-    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
-    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
-    macodrum.addBorrowedBook("1000-0-316-76948-0",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-1",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-2",student2.getId());
+    macodrum.addBorrowedBook("1000-0-316-76948-3",student2.getId());
 
 
     macodrum.printBorrowedBooks();
+    std::this_thread::sleep_for(seconds(15)); // let the thread sleep for 15 seconds and then return the book
 
+    macodrum.returnBook("978-0-316-76948-1",student1.getId());
+
+
+    macodrum.printBorrowedBooks();
 
 //    student1.printBorrowedBooks(macodrum.getBorrowedBooks());
 //    student2.printBorrowedBooks(macodrum.getBorrowedBooks());
