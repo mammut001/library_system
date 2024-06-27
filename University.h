@@ -21,10 +21,13 @@ using std::endl;
 class University {
 private:
     map<int,string> units;
+    //key is studentID val: name
+    map<string, string> students;
 public:
     void addMember(string name);
     void printUnits();
     int unitSize();
+
 
 
 

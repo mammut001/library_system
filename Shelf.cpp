@@ -18,6 +18,10 @@ string Shelf::getShelfId() const {
     return shelfId;
 }
 
+void Shelf::setInitialAmt(const std::string &isbn, int amt) {
+    //only call this function when adding book to the shelf;
+    shelf[isbn] = amt;
+}
 int Shelf::getShelfSize() const{
     return books.size();
 }

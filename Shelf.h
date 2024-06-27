@@ -23,6 +23,7 @@ private:
     string shelfId;
     vector<Book> books;
 
+    //map key is book isbn(string) : val: number of copies.
     map<string,int> shelf;
 
 
@@ -32,14 +33,22 @@ public:
     string getShelfId() const;
 
     void setShelfId(const string& id);
+    void setInitialAmt(const string& isbn, int amt);
 
     vector<Book> getBooks() const {
         return books;
     }
     bool updateNumberOfCopies(bool action,const Book &book);
+
     void addBook(const Book& book);
     void removeBook(const Book& book);
 
+    void checkStock(){
+        cout<<"Shelf ID: " << shelfId << endl;
+        for( auto &pair :shelf){
+            cout << "ISBN" << pair.first <<" and has " <<pair.second<<" copies available. "<<endl;
+        }
+    }
     void printAllBooks() const {
         cout<< shelfId <<endl;
         std::cout << "Total number of books on the shelf: " << getShelfSize() << std::endl;

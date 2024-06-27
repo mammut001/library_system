@@ -35,8 +35,18 @@ int main() {
     Shelf fiction("Fiction");
     Shelf nonfiction("Nonfiction");
 
+    fiction.setInitialAmt(myGenreBook.isbn,4);
+    fiction.setInitialAmt(myBook.isbn,7);
+
+    printf("Shelf CheckStock\n ");
+    fiction.checkStock();
+
     fiction.addBook(myGenreBook);
     fiction.addBook(myBook);
+
+    printf("Shelf CheckStock\n ");
+    fiction.checkStock();
+
     // myShelf.printAllBooks();
     Book nonfictionBook1;
     nonfictionBook1.name = "Sapiens: A Brief History of Humankind";
@@ -54,9 +64,11 @@ int main() {
     nonfictionBook3.isbn = "978-1400052189";
 
 
+
     nonfiction.addBook(nonfictionBook1);
     nonfiction.addBook(nonfictionBook2);
     nonfiction.addBook(nonfictionBook3);
+
 
 
 //    nonfiction.printAllBooks();
@@ -81,7 +93,7 @@ int main() {
 
 
     macodrum.printBorrowedBooks();
-    std::this_thread::sleep_for(seconds(15)); // let the thread sleep for 15 seconds and then return the book
+//    std::this_thread::sleep_for(seconds(15)); // let the thread sleep for 15 seconds and then return the book
 
     macodrum.returnBook("978-0-316-76948-1",student1.getId());
 
