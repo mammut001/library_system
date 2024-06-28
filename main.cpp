@@ -35,6 +35,9 @@ int main() {
     Shelf fiction("Fiction");
     Shelf nonfiction("Nonfiction");
 
+    fiction.addBook(myGenreBook);
+    fiction.addBook(myBook);
+
     fiction.setInitialAmt(myGenreBook.isbn,4);
     fiction.setInitialAmt(myBook.isbn,7);
 

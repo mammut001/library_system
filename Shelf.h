@@ -25,15 +25,24 @@ private:
 
     //map key is book isbn(string) : val: number of copies.
     map<string,int> shelf;
+    // This boolean keeps track of the initialization status of a shelf.
+    // If it's set to false, we can preset its book and amount.
+    // No other book will be added unless it's preset.
+    bool isInitialized;
+
 
 
 
 public:
-    Shelf(string id):shelfId(std::move(id)){};
+    Shelf(string id):shelfId(std::move(id)), isInitialized(false){};
     string getShelfId() const;
 
     void setShelfId(const string& id);
     void setInitialAmt(const string& isbn, int amt);
+    void setIsInitializedTrue(){
+        isInitialized = true;
+
+    }
 
     vector<Book> getBooks() const {
         return books;

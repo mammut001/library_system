@@ -21,6 +21,8 @@ string Shelf::getShelfId() const {
 void Shelf::setInitialAmt(const std::string &isbn, int amt) {
     //only call this function when adding book to the shelf;
     shelf[isbn] = amt;
+    setIsInitializedTrue();
+
 }
 int Shelf::getShelfSize() const{
     return books.size();
@@ -61,17 +63,26 @@ bool Shelf::updateNumberOfCopies(bool action,const Book &book) {
 
 
 void Shelf::addBook(const Book &book) {
-    Book newBook = book;
-    const string isbn = newBook.isbn;
-    newBook.index = getShelfSize();
+    // cannot perform action if it's not pre-set properly
+    if (isInitialized)
+    {
+        Book newBook = book;
+        const string isbn = newBook.isbn;
+        newBook.index = getShelfSize();
 
-    cout << "add book -  index " <<newBook.index << " Name is " << book.name << endl;
+        cout << "add book -  index " <<newBook.index << " Name is " << book.name << endl;
 
-    books.push_back(newBook);
+        books.push_back(newBook);
 
-    //update copies
-    updateNumberOfCopies(true, newBook);
+        //update copies
+        updateNumberOfCopies(true, newBook);
 
+
+    }
+    else{
+        printf("You have to initialize the book first.\n");
+
+    }
 
 }
 
